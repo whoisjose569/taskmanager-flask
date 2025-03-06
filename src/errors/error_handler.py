@@ -26,6 +26,14 @@ def register_error_handlers(app):
             "description": str(e),
         }, 409
 
+    @app.errorhandler(TaskAlreadyExistsError)
+    def handle_task_not_exists_error(e):
+        return {
+            "code": 404,
+            "name": "NotFound",
+            "description": str(e),
+        }, 404
+
     @app.errorhandler(Exception)
     def handle_generic_exception(e):
         return {
