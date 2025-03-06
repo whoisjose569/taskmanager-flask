@@ -4,6 +4,7 @@ from src.config import Config, configure_app
 from src.utils import db
 from src.presentation.controllers.task import task_controllers
 from flask_migrate import Migrate
+from src.utils import ma
 
 migrate = Migrate()
 
@@ -15,6 +16,7 @@ def create_app():
 
     db.init_app(app)
     migrate.init_app(app, db)
+    ma.init_app(app)
     register_commands(app)
     app.register_blueprint(task_controllers.bp)
 
