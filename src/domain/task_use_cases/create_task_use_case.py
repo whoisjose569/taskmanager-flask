@@ -1,5 +1,7 @@
 from src.data.interfaces.task_repository_interface import TaskRepositoryInterface
-from src.domain.interfaces.task_use_case_interface import CreateTaskUseCaseInterface
+from src.domain.interfaces.create_task_use_case_interface import (
+    CreateTaskUseCaseInterface,
+)
 from src.domain.entities.task_entitie import TaskEntitie
 from src.errors.custom_errors import TaskAlreadyExistsError
 
