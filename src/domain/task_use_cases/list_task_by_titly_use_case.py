@@ -1,10 +1,12 @@
 from src.data.interfaces.task_repository_interface import TaskRepositoryInterface
-from src.domain.interfaces.list_task_use_case_interface import ListTaskUseCaseInterface
+from src.domain.interfaces.list_task_use_case_interface import (
+    ListTaskByTitleUseCaseInterface,
+)
 from src.domain.entities.task_entitie import TaskEntitie
 from src.errors.custom_errors import TaskNotExistsError
 
 
-class ListTaskUseCase(ListTaskUseCaseInterface):
+class ListTaskByTitleUseCase(ListTaskByTitleUseCaseInterface):
     def __init__(self, task_repository: TaskRepositoryInterface):
         self.__task_repository = task_repository
 

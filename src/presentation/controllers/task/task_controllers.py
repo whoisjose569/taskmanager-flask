@@ -2,7 +2,7 @@ from flask import Blueprint, request
 from http import HTTPStatus
 from src.presentation.schemas.task_schema import CreateTaskSchema
 from src.composers.task.create_task_composer import TaskComposer
-from src.composers.task.list_task_composer import ListTaskComposer
+from src.composers.task.list_task_by_title_composer import ListTaskByTitleComposer
 from src.presenters.task_presenter import TaskPresenter
 
 bp = Blueprint("task", __name__, url_prefix="/tasks")
@@ -31,7 +31,7 @@ def list_task_by_title():
     try:
         data = request.json
 
-        service = ListTaskComposer.list_task_composer()
+        service = ListTaskByTitleComposer.list_task_composer()
 
         response = service.handle(data)
 
