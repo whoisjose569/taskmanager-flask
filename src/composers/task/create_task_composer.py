@@ -6,6 +6,7 @@ from src.infra.services.task_services.create_task_service import CreateTaskServi
 class TaskComposer:
 
     @staticmethod
-    def create_task_composer(task_repository: TaskRepository) -> CreateTaskService:
+    def create_task_composer() -> CreateTaskService:
+        task_repository = TaskRepository()
         create_task_use_case = CreateTaskUseCase(task_repository)
         return CreateTaskService(create_task_use_case)
