@@ -3,7 +3,7 @@ from typing import Dict
 from src.domain.entities.task_entitie import TaskEntitie
 
 
-class CreateTaskUseCaseInterface(ABC):
+class ListTaskUseCaseInterface(ABC):
     @abstractmethod
-    def handle(self, task: Dict) -> TaskEntitie:
+    def handle(self, task_title: str) -> TaskEntitie:
         pass
