@@ -29,7 +29,7 @@ def create_task():
 @bp.route("/", methods=["GET"])
 def list_task_by_title():
     try:
-        data = request.json
+        data = request.args.get("title")
 
         service = ListTaskByTitleComposer.list_task_composer()
 

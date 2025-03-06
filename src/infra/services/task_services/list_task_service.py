@@ -5,6 +5,5 @@ class ListTaskService:
     def __init__(self, task_use_case: ListTaskByTitleUseCase):
         self.__task_use_case = task_use_case
 
-    def handle(self, data: dict):
-        task_title = data["title"]
+    def handle(self, task_title):
         return self.__task_use_case.handle(task_title)
